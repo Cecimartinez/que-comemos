@@ -1,3 +1,4 @@
+import { LoginForm } from "./components/LoginForm";
 
 export const Login = () => {
 
@@ -11,7 +12,7 @@ export const Login = () => {
       </div>
 
       <div className="bg-white px-6 py-16 my-24 w-full h-full">
-
+        <LoginForm/>
       </div>
     </div>
   );
