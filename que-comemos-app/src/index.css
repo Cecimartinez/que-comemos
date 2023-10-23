@@ -3,3 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (max-width: 700px) {
+  .carrousel-container {
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    overflow-x: auto;
+    grid-auto-flow: column;
+    gap: 3rem;
+    padding: 2rem;
+  }
+
+  .carrousel-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-carrousel {
+    scroll-snap-align: start;
+    width: 20rem;
+  }
+}
