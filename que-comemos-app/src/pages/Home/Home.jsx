@@ -1,3 +1,4 @@
+import { NavigationBottom } from "../../components/NavigationBottom/NavigationBottom";
 import { SearchBar } from "../../components/SearchBard/SearchBard";
 import { Greeting } from "./components/Greeting/Greeting";
 
@@ -9,6 +10,7 @@ export const Home = () => {
         <SearchBar/>
       </div>
       <div className="bg-white px-6 py-16 my-24 w-full h-full"></div>
+      <NavigationBottom/>
     </div>
   );
 };
