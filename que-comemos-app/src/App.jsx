@@ -1,14 +1,16 @@
-// import { Login } from "./pages/login/login"
+// // import { Login } from "./pages/login/login"
 
-import { Home } from "./pages/Home/Home"
+import { AppRouter } from "./routes/AppRouter"
+
+// import { Home } from "./pages/Home/Home"
 
 
 function App() {
 
   return (
     <>
-      {/* <Login/> */}
-      <Home/>
+    <AppRouter/>
+
     </>
   )
 }
