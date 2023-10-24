@@ -1,18 +1,18 @@
 export const recetas = [
   {
     name: "Spaghetti al pesto",
-    imgSrc: "./pesto.svg",
+    imgSrc: "./pesto.webp",
 
   },
 
   {
     name: "People Table",
-    imgSrc: "./food.svg",
+    imgSrc: "./pesto.webp",
 
   },
   {
     name: "Delicate Macarons",
-    imgSrc: "./food.svg",
+    imgSrc: "./pesto.webp",
 
   },
 
