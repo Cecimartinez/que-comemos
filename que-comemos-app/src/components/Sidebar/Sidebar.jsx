@@ -1,4 +1,4 @@
-import { AlignLeft } from "lucide-react"
+import { AlignLeft, User2 } from "lucide-react"
 import {
   Sheet,
   SheetContent,
@@ -17,7 +17,7 @@ export const Sidebar = () => {
               <AlignLeft className="text-white w-10 h-10" />
             </SheetTrigger>
             <SheetContent className="bg-white" side={side}>
-
+            <User2 />
             </SheetContent>
           </Sheet>
         ))}
