@@ -42,15 +42,15 @@ export function ProfileForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className=" text-white text-2xl tracking-widest bg-[#B4c170] font-poppins py-10 px-10 rounded-3xl space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className=" text-neutral-700 text-3xl font-medium tracking-widest  font-poppins py-10 px-10 rounded-3xl space-y-8">
         <FormField
           control={form.control}
           name="Email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="text-base text-neutral-500" >Email</FormLabel>
               <FormControl>
-                <Input placeholder="email" {...field} />
+                <Input className="rounded-3xl px-5 text-neutral-400"  placeholder="email" type="email" {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -60,9 +60,9 @@ export function ProfileForm() {
           name="FullName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>FullName</FormLabel>
+              <FormLabel className="text-base text-neutral-500">FullName</FormLabel>
               <FormControl>
-                <Input placeholder="FullName" {...field} />
+                <Input className="rounded-3xl px-5 text-neutral-400"  type="text" placeholder="FullName" {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -73,16 +73,14 @@ export function ProfileForm() {
           name="Password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel className="text-base text-neutral-500">Password</FormLabel>
               <FormControl>
-                <Input placeholder="Password" {...field} />
+                <Input className="rounded-3xl px-5 text-neutral-400" type="password" placeholder="Password" {...field} />
               </FormControl>
             </FormItem>
           )}
         />
-
-
-        <Button className=" border text-lg tracking-wider  py-7 px-10 font-poppins focus:bg-[#b4c17059]" type="submit"> Submit</Button>
+        <Button className=" text-neutral-600 border-2 rounded-3xl border-[#B4c170] mx-16 text-lg tracking-wider  py-7 px-10 font-poppins focus:bg-[#b4c17067] focus:text-neutral-500" type="submit"> Submit</Button>
       </form>
     </Form>
   )
