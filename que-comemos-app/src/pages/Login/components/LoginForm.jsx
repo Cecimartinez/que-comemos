@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <form>
+    <form className=' flex-col '>
       <div className="mb-6 " >
         <label htmlFor="email" className="block text-gray-700 font-semibold">Usuario</label>
         <div className="relative">
@@ -48,11 +49,14 @@ export const LoginForm = () => {
           </div>
         </div>
       </div>
-      <button type="submit" className="bg-[#B4C170] shadow-xl uppercase text-white py-5 flex justify-between text-lg  px-10 rounded-full mt-16 hover:bg-[#9ca85f] w-full">Iniciar Sesión <span className="text-lg material-symbols-outlined">
+      <Link to="/" type="submit" className="bg-[#B4C170] shadow-xl uppercase text-white py-5 flex justify-between text-lg  px-10 rounded-full my-8 hover:bg-[#9ca85f] w-full">Iniciar Sesión <span className="text-lg material-symbols-outlined">
         arrow_right_alt
       </span>
+      </Link>
+      <div className='flex w-full justify-center'>
+        <Link to="/sign-in" className='cursor-pointer text-[#B4C170] text-center h-full  text-lg font-semibold'>Crear Cuenta </Link>
 
-      </button>
+      </div>
     </form>
   )
 }

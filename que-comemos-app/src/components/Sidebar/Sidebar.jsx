@@ -4,6 +4,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "../ui/Sheet"
+import { Link } from "react-router-dom"
 
 export const Sidebar = () => {
 
@@ -24,14 +25,14 @@ export const Sidebar = () => {
                 </section>
 
                 <div className="flex flex-col justify-start mx-3  items-start  text-neutral-600 tracking-wider">
-                  <h2 className="text-xl  font-medium ">Cecilia Martinez</h2>
-                  <h3 className="text-base   ">@cecidev</h3>
+                  <h2 className="text-xl  font-medium ">Emma Martinez</h2>
+                  <h3 className="text-base   ">@emmaMart</h3>
                 </div>
 
               </div>
 
               <div className="my-10 border-2 px-14 py-7 rounded-5xl border-[#b4c1706d] cursor-pointer bg-[#b4c17022]">
-                <button className="text-base tracking-wider text-[#B4c170] w-full h-full font-medium ">Cerrar Sesión </button>
+                <Link to="/login" className="text-base tracking-wider text-[#B4c170] w-full h-full font-medium ">Cerrar Sesión </Link>
               </div>
             </SheetContent>
           </Sheet>
