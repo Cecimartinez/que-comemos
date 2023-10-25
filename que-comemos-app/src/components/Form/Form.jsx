@@ -7,11 +7,9 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
@@ -80,7 +78,7 @@ export function ProfileForm() {
             </FormItem>
           )}
         />
-        <Button className=" text-neutral-600 border-2 rounded-3xl border-[#B4c170] mx-16 text-lg tracking-wider  py-7 px-10 font-poppins focus:bg-[#b4c17067] focus:text-neutral-500" type="submit"> Submit</Button>
+        <Button className=" text-[#B4c170] uppercase  border-2 rounded-3xl border-[#B4c170] mx-16 text-lg tracking-wider  py-7 px-10 font-poppins focus:bg-[#b4c17067] focus:text-neutral-500 font-medium" type="submit"> Submit</Button>
       </form>
     </Form>
   )
