@@ -14,7 +14,7 @@ export const LoginForm = () => {
             id="email"
             name="email"
             placeholder="Correo electrónico"
-            className="w-full border-b-2 bg-white border-gray-300 focus:border-[#B4C170] focus:outline-none py-2 pl-1"
+            className="w-full border-b-2 bg-white b border-gray-300 focus:border-[#B4C170] focus:outline-none py-2 pl-1"
           />
           <div className="absolute right-3 top-2 text-[#B4C170]">
             <span className="material-symbols-outlined">
