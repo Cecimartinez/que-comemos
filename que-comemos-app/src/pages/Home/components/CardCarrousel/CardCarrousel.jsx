@@ -5,10 +5,11 @@ export const CardCarrousel = () => {
   return (
     <div className="carrousel-container w-full py-2 my-2 px-2 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
       {
-        recetas.map((receta) => (
+        recetas.map((receta,index) => (
           <div
             className="card-carrousel flex-col mx-auto w-11/12 sm:px-3 rounded-4xl flex shadow-lg  justify-center   bg-[#fff] "
             draggable="false"
+            key={index} 
           >
             <a
               href={receta.link}

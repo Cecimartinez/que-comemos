@@ -23,8 +23,8 @@ export const UserProfile = () => {
       <div className="px-10  py-20  flex justify-center items-center w-full ">
         <div className=" flex flex-col w-full items-center justify-center border-neutral-200 border bg-white shadow-xl py-20 rounded-xl px-5">
           <div className="flex items-center justify-center flex-col ">
-            <div class="avatar online my-5 mx-3">
-              <div class="w-24 rounded-full border ">
+            <div className="avatar online my-5 mx-3">
+              <div className="w-24 rounded-full border ">
                 <img src="././profile.png" />
               </div>
             </div>
