@@ -12,7 +12,7 @@ export const Home = () => {
       <div className="w-full flex justify-center items-center">
         <SearchBar />
       </div>
-      <div className="bg-white px-6 py-8 mt-10 w-full h-full">
+      <div className="bg-white px-6 py-16 mt-10 w-full h-full">
         <section>
           <h2 className="text-gray-400 text-xl tracking-widest font-poppins">Los más elegidos por nuestros Usuarios</h2>
         </section>
