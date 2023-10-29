@@ -3,6 +3,7 @@ import { NavigationBottom } from "../../components/NavigationBottom/NavigationBo
 import { Link } from "react-router-dom"
 export const SavedRecipes = () => {
   return (
+    
     <div className="bg-[#fff] font-poppins flex flex-col justify-between items-baseline h-screen w-full">
       
       <div className="bg-[#B4c170] text-white w-full pt-8 pb-16 rounded-b-5xl absolute px-4  flex items-baseline justify-between">
