@@ -3,7 +3,7 @@ import { StarIcons } from "../StarIcons/StarIcons"
 
 export const CardCarrousel = () => {
   return (
-    <div className="carrousel-container w-full py-2 my-2 px-2 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
+    <div className="carrousel-container w-full px-2 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
       {
         recetas.map((receta,index) => (
           <div

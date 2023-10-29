@@ -16,7 +16,7 @@ export const SavedRecipes = () => {
       </div>
       
 
-      <div className="flex flex-col justify-center items-center h-full ">
+      <div className="flex flex-col justify-center  items-center h-full ">
         <CardRecipes/>
         <CardRecipes/>
         <CardRecipes/>
