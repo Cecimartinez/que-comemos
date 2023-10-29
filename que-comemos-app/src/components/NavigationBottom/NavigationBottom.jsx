@@ -6,7 +6,7 @@ export const NavigationBottom = () => {
       <div className="grid h-full max-w-lg grid-cols-4 mx-auto items-center justify-center">
         <NavigationItem to="/"  icon="Home" />
         <NavigationItem to="/saved-recipes"  icon="bookmark" />
-        <NavigationItem to="/search"  icon="search" />
+        <NavigationItem to="/recipe-search"  icon="search" />
         <NavigationItem to="/user-profile"  icon="person" />
       </div>
     </div>

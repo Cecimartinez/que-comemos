@@ -7,6 +7,7 @@ import { SavedRecipes } from "../pages/SavedRecipes/SavedRecipes";
 import { Ingredients } from "../pages/Ingredients/Ingredients";
 import { Steps } from "../pages/Steps/Steps";
 import { Home } from "../pages/Home/Home";
+import { RecipeSearch } from "../pages/RecipeSearch/RecipeSearch";
 
 export const AppRouter = () => {
   return (
@@ -19,6 +20,8 @@ export const AppRouter = () => {
         <Route path={ROUTE_PATHS.SAVEDRECIPES} element={<SavedRecipes/>} />
         <Route path={ROUTE_PATHS.INGREDIENTS} element={<Ingredients/>} />
         <Route path={ROUTE_PATHS.STEPS} element={<Steps/>} />
+        <Route path={ROUTE_PATHS.RECIPESSEACRH} element={<RecipeSearch/>} />
+
         <Route index element={<Home/>} />
 
         <Route path="/*" element={<Navigate to={""} />} />

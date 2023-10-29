@@ -7,6 +7,6 @@ export const ROUTE_PATHS = {
   RECIPES:"recipes",
   INGREDIENTS:"Ingredients",
   STEPS:"steps",
-  
+  RECIPESSEACRH:"recipe-search"
 
 };

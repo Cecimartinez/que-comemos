@@ -1,6 +1,6 @@
 export const SearchBar = () => {
   return (
-    <div className="absolute  ">
+    <div className="absolute">
       <input
         type="search"
         className="input text-lg transition-all duration-500 ease-in-out bg-white shadow-xl border py-10  items-center px-16 font-medium justify-center rounded-5xl focus:border-2 focus:border-[#abb867] focus:bg-white"
