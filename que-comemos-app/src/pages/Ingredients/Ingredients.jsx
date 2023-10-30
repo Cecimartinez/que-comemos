@@ -1,4 +1,5 @@
 import { NavigationBottom } from "../../components/NavigationBottom/NavigationBottom"
+import { IngredientsItems } from "./components/IngredientsItems"
 
 export const Ingredients = () => {
   return (
@@ -41,31 +42,12 @@ export const Ingredients = () => {
           </section>
 
           <div className=" w-full h-full bg-white  px-8 pt-3   ">
-            <div className=" bg-white  w-full h-full border-2 border-neutral-200 rounded-t-4xl shadow-xl  flex flex-col px-8 py-5 mb-3.5">
+            <div className=" bg-white  w-full h-full border border-neutral-200 rounded-t-4xl shadow-xl  flex flex-col px-8 py-5 mb-3.5">
 
-              <div className="ingredients-items flex mb-5 text-lg  items-center justify-between text-neutral-700  ">
-                <img className="w-16 h-16 rounded-full " src="././cookie.webp"/>
-                <p>Azúcar granulada </p>
-                <p>100 gr.</p>
-              </div>
-
-              <div className="ingredients-items flex mb-5 text-lg  items-center justify-between text-neutral-700  ">
-                <img className="w-16 h-16 rounded-full " src="././cookie.webp"/>
-                <p>Azúcar granulada </p>
-                <p>100 gr.</p>
-              </div>
-
-              <div className="ingredients-items flex mb-5 text-lg  items-center justify-between text-neutral-700  ">
-                <img className="w-16 h-16 rounded-full " src="././cookie.webp"/>
-                <p>Azúcar granulada </p>
-                <p>100 gr.</p>
-              </div>
-
-              <div className="ingredients-items flex mb-5 text-lg  items-center justify-between text-neutral-700  ">
-                <img className="w-16 h-16 rounded-full " src="././cookie.webp"/>
-                <p>Azúcar granulada </p>
-                <p>100 gr.</p>
-              </div>
+              <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
+              <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
+              <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
+              <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
 
             </div>
           </div>
