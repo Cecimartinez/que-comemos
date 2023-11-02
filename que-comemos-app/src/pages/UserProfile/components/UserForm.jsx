@@ -1,6 +1,6 @@
 export const UserForm = () => {
   return (
-      <form className=' py-10 px-8  text-neutral-500 flex-col  flex items-center justify-center '>
+      <form className=' py-10 px-8  text-neutral-800 flex-col  flex items-center justify-center '>
 
         <div className="mb-6 " >
           <label htmlFor="email" className="block  font-medium">Email</label>
@@ -16,16 +16,28 @@ export const UserForm = () => {
         </div>
 
         <div className="mb-6 " >
-          <label htmlFor="email" className="block font-medium">Fullname</label>
+          <label htmlFor="email" className="block font-medium">Nombre</label>
           <div className="relative">
             <input
               type="text"
               id="text"
               name="text"
-              placeholder="Full Name"
+              placeholder="Nombre"
               className="w-full border-b-2 bg-white placeholder-neutral-400  border-neutral-300 focus:border-[#B4C170] focus:outline-none py-2 pl-1"
             />
-          
+            </div>
+          </div>
+
+          <div className="mb-6 " >
+          <label htmlFor="text" className="block font-medium">Apellido</label>
+          <div className="relative">
+            <input
+              type="text"
+              id="text"
+              name="text"
+              placeholder="Apellido"
+              className="w-full border-b-2 bg-white placeholder-neutral-400  border-neutral-300 shadow-lg focus:border-[#B4C170] focus:outline-none py-2 pl-1"
+            />
             </div>
           </div>
  

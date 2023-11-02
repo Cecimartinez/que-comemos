@@ -10,14 +10,16 @@ export const UserProfileInfo = () => {
               <img src="./profile.png" alt="Profile" />
             </div>
           </div>
-          <p className="text-2xl font-medium text-neutral-500 my-5">Valentina Martinez</p>
+          <p className="text-2xl  text-neutral-700 my-5">Valentina Martinez</p>
         </div>
 
         <div className="flex flex-col text-lg py-4 px-5 items-start tracking-wider">
-          <label htmlFor="email" className="block font-medium text-neutral-500">Email</label>
-          <p className="my-1">valmar@gmail.com</p>
-          <label htmlFor="fullname" className="block font-medium text-neutral-500">Fullname</label>
-          <p className="my-1">Valentina Martinez</p>
+          <label htmlFor="email" className="block font-medium text-xl text-neutral-700">Email</label>
+          <p className="mt-1 mb-3 text-neutral-500">valmar@gmail.com</p>
+          <label htmlFor="fullname" className="block text-xl font-medium text-neutral-700">Nombre</label>
+          <p className="mt-1 mb-3 text-neutral-500">Valentina </p>
+          <label htmlFor="fullname" className="block font-medium text-neutral-700 text-xl">Apellido</label>
+          <p className="mt-1 mb-3 text-neutral-500"> Martinez</p>
         </div>
 
         <div>
