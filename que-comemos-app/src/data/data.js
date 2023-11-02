@@ -15,5 +15,10 @@ export const recetas = [
     imgSrc: "./pesto.webp",
 
   },
+  {
+    name: "Delicate Macarons",
+    imgSrc: "./pesto.webp",
+
+  },
 
 ];

@@ -5,21 +5,26 @@ import { Greeting } from "./components/Greeting/Greeting";
 
 export const Home = () => {
   return (
-    <div className="bg-white font-poppins flex flex-col justify-center items-baseline h-screen  w-full">
+    <div className="bg-white font-poppins flex flex-col justify-between items-baseline  h-screen w-full md:h-full">
       <Greeting />
 
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full  flex justify-center items-center">
         <SearchBar />
       </div>
-      <div className="bg-white px-6 py-16 mt-10 w-full h-full">
+      <div className="bg-white flex flex-col mb-10  lg:py-16  w-full h-[50%]">
         <section>
-          <h2 className="text-gray-400 text-xl tracking-widest font-poppins">Los más elegidos por nuestros Usuarios</h2>
+          <h2 className="ml-6 text-gray-400 text-xl tracking-widest font-poppins">Los más elegidos por nuestros Usuarios</h2>
         </section>
 
-        <CardCarrousel/>
+        <div className="bg-white w-full ">
+          <CardCarrousel />
+
+        </div>
 
       </div>
-      <NavigationBottom />
+      <section>
+        <NavigationBottom />
+      </section>
     </div>
   );
 };

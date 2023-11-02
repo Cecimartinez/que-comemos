@@ -7,7 +7,7 @@ export const CardCarrousel = () => {
       {
         recetas.map((receta,index) => (
           <div
-            className="card-carrousel flex-col mx-auto w-11/12 sm:px-3 rounded-4xl flex shadow-lg  justify-center my-4   bg-white"
+            className="card-carrousel flex-col mx-auto w-11/12 sm:px-3 rounded-4xl flex shadow-xl border-t-0 border border-neutral-200  justify-center my-4   bg-white"
             draggable="false"
             key={index} 
           >
