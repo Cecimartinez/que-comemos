@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @media (max-width: 700px) {
   .carrousel-container {
     scroll-snap-type: x mandatory;

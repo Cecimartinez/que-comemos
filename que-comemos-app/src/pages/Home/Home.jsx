@@ -5,7 +5,7 @@ import { Greeting } from "./components/Greeting/Greeting";
 
 export const Home = () => {
   return (
-    <div className="bg-white font-poppins flex flex-col justify-center items-baseline h-screen w-full">
+    <div className="bg-white font-poppins flex flex-col justify-center items-baseline h-screen  w-full">
       <Greeting />
 
       <div className="w-full flex justify-center items-center">
