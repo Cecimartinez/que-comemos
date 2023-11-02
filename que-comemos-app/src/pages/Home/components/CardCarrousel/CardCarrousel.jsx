@@ -3,11 +3,11 @@ import { StarIcons } from "../StarIcons/StarIcons"
 
 export const CardCarrousel = () => {
   return (
-    <div className="carrousel-container w-full  px-2 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
+    <div className="carrousel-container w-full   grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
       {
         recetas.map((receta,index) => (
           <div
-            className="card-carrousel flex-col mx-auto w-11/12 sm:px-3 rounded-4xl flex shadow-xl border-t-0 border border-neutral-200  justify-center my-4   bg-white"
+            className="card-carrousel flex-col  w-11/12 sm:px-3 rounded-4xl flex shadow-xl border-t-0 border border-neutral-200  justify-center my-4   bg-neutral-50"
             draggable="false"
             key={index} 
           >
@@ -17,7 +17,7 @@ export const CardCarrousel = () => {
               rel="noopener noreferrer "
               className=""
             >
-              <div className=" flex  justify-center mx-10 my-4  py-2 px-10  rounded-full items-center ">
+              <div className=" flex  justify-center mx-10 my-5  py-2 px-10  rounded-full items-center ">
                 <img src={receta.imgSrc} alt={receta.name} className=" w-full h-full" />
               </div>
             </a>

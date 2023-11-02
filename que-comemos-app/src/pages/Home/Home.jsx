@@ -11,12 +11,12 @@ export const Home = () => {
       <div className="w-full  flex justify-center items-center">
         <SearchBar />
       </div>
-      <div className="bg-white flex flex-col mb-10  lg:py-16  w-full h-[50%]">
+      <div className="bg-white flex flex-col my-20   lg:py-16  w-full">
         <section>
-          <h2 className="ml-6 text-gray-400 text-xl tracking-widest font-poppins">Los más elegidos por nuestros Usuarios</h2>
+          <h2 className="mx-6 text-gray-400 text-xl tracking-widest font-poppins">Los más elegidos por nuestros Usuarios</h2>
         </section>
 
-        <div className="bg-white w-full ">
+        <div className="bg-white w-full pb-10">
           <CardCarrousel />
 
         </div>
