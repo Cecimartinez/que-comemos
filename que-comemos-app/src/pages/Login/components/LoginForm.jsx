@@ -7,14 +7,14 @@ export const LoginForm = () => {
   return (
     <form className=' flex-col '>
       <div className="mb-6 " >
-        <label htmlFor="email" className="block text-gray-700 font-semibold">Usuario</label>
+        <label htmlFor="email" className="block text-neutral-700 font-medium text-xl">Usuario</label>
         <div className="relative">
           <input
-            type="text"
+            type="email"
             id="email"
             name="email"
             placeholder="Correo electrónico"
-            className="w-full border-b-2 bg-white b border-gray-300 focus:border-[#B4C170] focus:outline-none py-2 pl-1"
+            className="w-full border-b-2 bg-white b border-neutral-300 focus:border-[#B4C170] focus:outline-none py-2 "
           />
           <div className="absolute right-3 top-2 text-[#B4C170]">
             <span className="material-symbols-outlined">
@@ -24,14 +24,14 @@ export const LoginForm = () => {
         </div>
       </div>
       <div className="mb-6">
-        <label htmlFor="password" className="block font-semibold text-gray-700">Contraseña</label>
+        <label htmlFor="password" className="block text-xl font-medium  text-neutral-700">Contraseña</label>
         <div className="relative">
           <input
             type={showPassword ? 'text' : 'password'}
             id="password"
             name="password"
             placeholder="Contraseña"
-            className="w-full border-b-2 bg-white border-gray-300 focus:border-[#B4C170] focus:outline-none py-2 pl-1"
+            className="w-full border-b-2 bg-white border-neutral-300 focus:border-[#B4C170] focus:outline-none py-2 "
           />
           <div
             className="absolute right-3 top-2 text-[#B4C170] cursor-pointer"
@@ -54,7 +54,7 @@ export const LoginForm = () => {
       </span>
       </Link>
       <div className='flex w-full justify-center'>
-        <Link to="/sign-in" className='cursor-pointer text-[#B4C170] text-center h-full  text-lg font-semibold'>Crear Cuenta </Link>
+        <Link to="/sign-in" className='cursor-pointer text-[#B4C170] text-center h-full  text-lg font-medium'>Crear Cuenta </Link>
 
       </div>
     </form>
