@@ -1,7 +1,18 @@
 import { NavigationBottom } from "../../components/NavigationBottom/NavigationBottom"
 import { IngredientsItems } from "./components/IngredientsItems"
+import { useEffect, useState } from "react"
+import getReceta from "./ingredientes.api"
 
 export const Ingredients = () => {
+  //const [receta, setReceta] = useState()
+  const [receta, setReceta] = useState({ nombre: "", ingredientes: [] });
+
+  useEffect(() => {
+    getReceta(10, (recetaData) => {
+      setReceta(recetaData[0]); // Tomamos el primer elemento del array
+    });
+  }, []);
+
   return (
     <div className="bg-white h-screen flex flex-col justify-center items-baseline ">
       <div className="flex flex-col justify-between h-screen w-full ">
@@ -12,13 +23,13 @@ export const Ingredients = () => {
 
           <section className="flex flex-col justify-center items-center py-5 gap-3">
             <p className="text-lg text-neutral-700 font-poppins my-3 font-medium">
-              Galletas con chispas de chocolate
+              {receta.nombre}
             </p>
             <div className="flex justify-center gap-7 ">
               <div className="flex justify-center items-center  ">
                 <span className="mr-2 material-symbols-outlined "> timer
                 </span>
-                <p className="">20'</p>
+                <p className="">30'</p>
                 <i className="ml-7">|</i>
               </div>
 
@@ -44,7 +55,14 @@ export const Ingredients = () => {
           <div className=" w-full h-full bg-white  px-8 pt-3   ">
             <div className=" bg-white  w-full h-full border border-neutral-200 rounded-t-4xl shadow-xl  flex flex-col px-8 py-5 mb-3.5">
 
-              <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
+            {receta.ingredientes.map((ingrediente, index) => (
+                <IngredientsItems
+                  key={index}
+                  img={`http://localhost:8080/api/images/${ingrediente.id}`} // ¡Asegúrate de proporcionar la imagen correcta!
+                  ingredient={ingrediente.nombre}
+                  cant="" // Puedes agregar la cantidad si la tienes disponible en tus datos
+                />
+                ))}
               <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
               <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
               <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
