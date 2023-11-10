@@ -9,7 +9,7 @@ export const Ingredients = () => {
 
   useEffect(() => {
     getReceta(10, (recetaData) => {
-      setReceta(recetaData[0]); // Tomamos el primer elemento del array
+      setReceta(recetaData[0]);
     });
   }, []);
 
@@ -17,7 +17,7 @@ export const Ingredients = () => {
     <div className="bg-white h-screen flex flex-col justify-center items-baseline ">
       <div className="flex flex-col justify-between h-screen w-full ">
         <div className="flex w-full ">
-          <img className=" w-full" src="././cookie.webp" />
+          <img className=" w-full" src={`http://localhost:8080/api/images/${receta.id}`} />
         </div>
         <div className="absolute top-1/2 bg-white border h-1/2 shadow-lg border-neutral-300 rounded-t-5xl w-full">
 
@@ -29,14 +29,14 @@ export const Ingredients = () => {
               <div className="flex justify-center items-center  ">
                 <span className="mr-2 material-symbols-outlined "> timer
                 </span>
-                <p className="">30'</p>
+                <p className="">{receta.tiempoPreparacion}'</p>
                 <i className="ml-7">|</i>
               </div>
 
               <div className="flex justify-center items-center ">
                 <span className="mr-2 material-symbols-outlined">star
                 </span>
-                <p className=""></p> 4.2
+                <p className=""></p> {receta.puntuacion}
                 <i className="ml-7">|</i>
 
               </div>
@@ -58,14 +58,14 @@ export const Ingredients = () => {
             {receta.ingredientes.map((ingrediente, index) => (
                 <IngredientsItems
                   key={index}
-                  img={`http://localhost:8080/api/images/${ingrediente.id}`} // ¡Asegúrate de proporcionar la imagen correcta!
+                  img={`http://localhost:8080/api/images/${ingrediente.id}`}
                   ingredient={ingrediente.nombre}
-                  cant="" // Puedes agregar la cantidad si la tienes disponible en tus datos
+                  cant="" 
                 />
                 ))}
+              {/* <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
               <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
-              <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
-              <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
+              <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." /> */}
 
             </div>
           </div>
