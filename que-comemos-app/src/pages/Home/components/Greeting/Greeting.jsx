@@ -3,7 +3,7 @@ import { Sidebar } from "../../../../components/Sidebar/Sidebar";
 
 export const Greeting = () => {
   return (
-    <header className='bg-[#B4c170]  w-full h-auto  flex flex-col px-7 pt-6  pb-10 items-center justify-start rounded-b-5xl'>
+    <header className='bg-[#B4c170]  w-full h-auto  flex flex-col px-7 pt-5  pb-10 items-center justify-start rounded-b-5xl'>
 
       <div className=" w-full flex justify-between items-center">
         <Sidebar />
@@ -12,12 +12,12 @@ export const Greeting = () => {
         </section>
       </div>
 
-      <div className="ml-10 flex flex-col w-full justify-center items-start pt-10 pb-5 my-2 lg:my-10">
-        <h1 className='tracking-wide text-white text-3xl  font-medium'>
-          Buenos Días
+      <div className="flex flex-col w-full justify-center items-center   my-2 lg:my-8">
+        <h1 className='tracking-wide text-white text-4xl  font-medium'>
+          ¿Qué comemos hoy 
         </h1>
         <h2 className='text-white  text-3xl font-medium tracking-wide'>
-          Emma
+          Emma ?
         </h2>
       </div>
     </header>

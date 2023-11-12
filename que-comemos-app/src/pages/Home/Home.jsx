@@ -11,9 +11,9 @@ export const Home = () => {
       <div className="w-full  flex justify-center items-center">
         <SearchBar />
       </div>
-      <div className="bg-white flex flex-col my-20   lg:py-16  w-full">
+      <div className="bg-white flex flex-col my-5  lg:py-12  w-full">
         <section>
-          <h2 className="mx-6 text-gray-400 text-xl tracking-widest font-poppins">Los más elegidos por nuestros Usuarios</h2>
+          <h2 className="mx-6 lg:mb-10 lg:text-2xl text-gray-500 text-xl tracking-widest font-poppins">Recetas que podrían interesarte</h2>
         </section>
 
         <div className="bg-white w-full pb-10">
