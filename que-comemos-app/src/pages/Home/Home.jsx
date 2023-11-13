@@ -1,11 +1,12 @@
 import { NavigationBottom } from "../../components/NavigationBottom/NavigationBottom";
+import { ProductCard } from "../../components/ProductCard/ProductCard";
 import { SearchBar } from "../../components/SearchBard/SearchBard";
 import { CardCarrousel } from "./components/CardCarrousel/CardCarrousel";
 import { Greeting } from "./components/Greeting/Greeting";
 
 export const Home = () => {
   return (
-    <div className="bg-white font-poppins flex flex-col justify-between items-baseline  2xl:h-full  w-full md:h-full">
+    <div className="bg-white font-poppins flex flex-col justify-between items-baseline h-screen  2xl:h-full  w-full md:h-full">
       <Greeting userName="Valentina" />
 
       <div className="w-full  flex justify-center items-center lg:mb-4 mb-10">
@@ -21,7 +22,15 @@ export const Home = () => {
           <CardCarrousel />
         </div>
 
+        <div className="flex justify-center items-center px-5  w-full bg-white">
+        <ProductCard/>
+        </div>
+
+      
+
       </div>
+
+
 
       <section>
         <NavigationBottom />
