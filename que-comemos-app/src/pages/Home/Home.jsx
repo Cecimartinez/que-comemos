@@ -12,7 +12,7 @@ export const Home = () => {
         <SearchBar className={"absolute top-40 lg:top-52 "} />
       </div>
 
-      <div className="bg-white flex flex-col my-5 sm:py-5 lg:py-14  w-full">
+      <div className="bg-white flex flex-col my-10 sm:py-5 lg:py-14  w-full">
         <section>
           <h2 className="mx-6 lg:mb-10 lg:text-2xl text-gray-500 text-xl tracking-widest font-poppins">Recetas que podrían interesarte</h2>
         </section>

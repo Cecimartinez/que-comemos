@@ -8,7 +8,8 @@ export const RecipeSearch = () => {
 
       <Header />
       <div className=" top-24   absolute  flex justify-center left-1/2 ">
-        <SearchBar />
+        
+        <SearchBar className="absolute" />
       </div>
 
       <NavigationBottom />
