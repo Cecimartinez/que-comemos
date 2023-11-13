@@ -3,11 +3,11 @@ import { StarIcons } from "../StarIcons/StarIcons"
 
 export const CardCarrousel = () => {
   return (
-    <div className="carrousel-container w-full   grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
+    <div className="carrousel-container w-full md:px-20 h-full  grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
       {
         recetas.map((receta,index) => (
           <div
-            className="card-carrousel flex-col  w-11/12 sm:px-3 rounded-4xl flex shadow-xl border-t-0 border border-neutral-200  justify-center my-4   bg-neutral-50"
+            className="card-carrousel flex-col  w-11/12 sm:px-5 lg:px-5 rounded-4xl flex shadow-2xl  py-10 h-80 border border-neutral-300  justify-center my-4   bg-white"
             draggable="false"
             key={index} 
           >
@@ -17,11 +17,11 @@ export const CardCarrousel = () => {
               rel="noopener noreferrer "
               className=""
             >
-              <div className=" flex  justify-center mx-10 my-5  py-2 px-10  rounded-full items-center ">
+              <div className=" flex  justify-center mx-8   py-2 px-10 lg:px-20 rounded-full items-center ">
                 <img src={receta.imgSrc} alt={receta.name} className=" w-full h-full" />
               </div>
             </a>
-            <div className=" rounded-xl py-12  flex justify-center items-start px-7  flex-col h-14 text-gray-900">
+            <div className=" rounded-xl  flex justify-center items-start px-7  flex-col h-14 text-gray-900">
               <h2 className="text-lg lg:text-xl tracking-wider text-neutral-500 mt-1 text-center font-medium font-poppins">
                 {receta.name}
               </h2>
