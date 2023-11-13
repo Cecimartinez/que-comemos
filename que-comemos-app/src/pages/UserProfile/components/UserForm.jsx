@@ -1,6 +1,6 @@
 export const UserForm = () => {
   return (
-      <form className=' py-10 px-8  text-neutral-800 flex-col  flex items-center justify-center '>
+      <form className=' py-10  bg-white  text-neutral-800 flex-col w-full  flex items-center justify-center '>
 
         <div className="mb-6 " >
           <label htmlFor="email" className="block  font-medium">Email</label>
