@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const CardRecipes = () => {
   return (
     <Link to="/ingredients">
-      <div className="flex max-w-md  overflow-hidden  bg-white border border-neutral-300 rounded-xl shadow-xl mx-5 mt-4 py-4 px-4">
+      <div className="flex max-w-md  overflow-hidden  bg-white border border-neutral-300 rounded-xl shadow-xl my-2 mx-4 py-4 px-4">
         <div className="w-1/3 h-full  bg-cover bg-landscape flex justify-center items-center ">
           <img className="h-full w-full  rounded-xl" src="././cookie.webp" alt="Cookie Image" />
         </div>

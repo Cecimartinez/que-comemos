@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+export const Header = ({page}) => {
   return (
     <div className="bg-[#B4C170] text-white w-full top-0  py-5   absolute px-4 flex items-start justify-between">
       <Link to="/" className="text-lg inline-flex items-center">
@@ -9,7 +9,7 @@ export const Header = () => {
         </svg>
         Home
       </Link>
-      <h1 className="text-xl font-medium">Perfil del usuario</h1>
+      <h1 className="text-xl font-medium">{page}</h1>
     </div>
   );
 };
