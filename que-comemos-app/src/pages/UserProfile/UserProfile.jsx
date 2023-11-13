@@ -5,7 +5,7 @@ import { UserProfileInfo } from "./components/UserProfileInfo";
 export const UserProfile = () => {
   return (
     <div className="bg-white font-poppins flex flex-col justify-center items-baseline min-h-screen w-full">
-      <Header/>
+      <Header page="Datos personales"/>
       <UserProfileInfo/>
       <NavigationBottom />
     </div>

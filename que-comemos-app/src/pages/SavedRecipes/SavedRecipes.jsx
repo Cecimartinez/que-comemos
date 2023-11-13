@@ -15,8 +15,8 @@ export const SavedRecipes = () => {
         <CardRecipes />
         <CardRecipes />
       </div>
-      <NavigationBottom />
 
+      <NavigationBottom />
     </div>
   )
 }
