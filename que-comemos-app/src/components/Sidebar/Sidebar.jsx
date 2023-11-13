@@ -19,20 +19,20 @@ export const Sidebar = () => {
             </SheetTrigger>
             <SheetContent className="bg-white font-poppins flex flex-col justify-between items-center" side={side}>
 
-              <div className="flex my-14 items-center ">
-                <section className=" py-4 border-2 border-[#b4c1706d] bg-[#b4c17022] bg- rounded-full  justify-center items-center px-4">
-                  <User2 className="w-full  text-neutral-500" />
+              <div className="flex my-14 items-center flex-col ">
+                <section className=" py-4 bg-[#B4c170] rounded-full  my-4 justify-center items-center px-4">
+                  <User2 className="w-full  text-white" />
                 </section>
 
                 <div className="flex flex-col justify-start mx-3  items-start  text-neutral-600 tracking-wider">
-                  <h2 className="text-xl  font-medium ">Emma Martinez</h2>
-                  <h3 className="text-base   ">@emmaMart</h3>
+                  <h2 className="text-xl  font-medium ">Valentina Martinez</h2>
                 </div>
+                <h3 className="text-sm   ">valMart@gmail.com</h3>
 
               </div>
 
-              <div className="my-10 border-2 px-14 py-7 rounded-5xl border-[#b4c1706d] cursor-pointer bg-[#b4c17022]">
-                <Link to="/login" className="text-base tracking-wider text-[#B4c170] w-full h-full font-medium ">Cerrar Sesión </Link>
+              <div className="my-10 border-2 px-10 shadow-lg py-7 rounded-5xl  cursor-pointer bg-[#B4c170]">
+                <Link to="/login" className="text-lg tracking-wider text-white w-full h-full font-medium ">Cerrar Sesión </Link>
               </div>
             </SheetContent>
           </Sheet>
