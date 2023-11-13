@@ -11,7 +11,7 @@ export const UserProfileInfo = () => {
           <p className="text-2xl  text-neutral-700 my-5">Valentina Martinez</p>
         </div>
 
-        <div className="flex flex-col text-lg py-4 px-5 items-start tracking-wider">
+        <div className="flex flex-col  py-4 px-5 items-start tracking-wider">
           <label htmlFor="email" className="block font-medium text-xl text-neutral-700">Email</label>
           <p className="mt-1 mb-3 text-neutral-500">valmar@gmail.com</p>
           <label htmlFor="fullname" className="block text-xl font-medium text-neutral-700">Nombre</label>
