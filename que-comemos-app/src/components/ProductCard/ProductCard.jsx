@@ -1,27 +1,27 @@
 export const ProductCard=()=>{
   return(
     
-<div class="flex items-center justify-center  w-full pb-16  ">
-    <div class="w-full p-4 b">
-        <div class="flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl card">
-            <div class="prod-title">
-                <p class="text-2xl font-bold text-gray-900 uppercase">
-                    ¿Qué comemos? +
+<div className="flex items-center justify-center lg:mx-10 w-full pb-16  ">
+    <div className="w-full p-4 b">
+        <div className="flex flex-col lg:flex-col items-center  justify-center p-10 bg-white rounded-lg shadow-2xl card">
+            <div className="prod-title">
+                <p className="text-2xl lg:text-3xl font-bold text-gray-900 uppercase">
+                    ¿Qué comemos? <i className="text-[#B4c170] text-4xl">+</i>
                 </p>
-                <p class="text-sm text-gray-400 uppercase">
+                <p className="text-sm lg:text-lg text-gray-400 uppercase">
                     Explorá una mejor experiencia con la versión premiun 
                 </p>
             </div>
-            <div class="prod-img my-1">
-                <img src="././pesto.webp" class="object-cover object-center w-full"/>
+            <div className="prod-img my-1 ">
+                <img src="././pesto.webp" className="object-cover lg:w-96  object-center   w-full"/>
             </div>
-            <div class="grid gap-10 prod-info">
+            <div className="grid gap-10 prod-info">
 
-                <div class="flex flex-col items-center justify-between text-gray-900 md:flex-row">
-                    <p class="text-xl font-bold">
-                      $ 1200 
+                <div className=" items-center justify-between text-gray-900 md:flex-row">
+                    <p className="text-xl font-bold my-1">
+                      $ 1200 / Mes
                     </p>
-                    <button class="px-6 py-2 uppercase transition duration-200 ease-in border-2 border-gray-900 rounded-full hover:bg-gray-800 hover:text-white focus:outline-none">
+                    <button className="px-6 py-2 uppercase transition duration-200 ease-in border-2 border-[#B4c170] rounded-full hover:bg-[#B4c170] hover:text-white focus:outline-none">
                         Lo quiero!
                     </button>
                 </div>

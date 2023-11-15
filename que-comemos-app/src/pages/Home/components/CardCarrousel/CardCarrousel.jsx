@@ -3,11 +3,11 @@ import { StarIcons } from "../StarIcons/StarIcons"
 
 export const CardCarrousel = () => {
   return (
-    <div className="carrousel-container w-full md:px-20 h-full  grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
+    <div className="carrousel-container w-full md:px-20 h-full bg-white  grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
       {
         recetas.map((receta,index) => (
           <div
-            className="card-carrousel flex-col  w-11/12 sm:px-5 lg:px-5 rounded-4xl flex shadow-2xl  py-10 h-80 border border-neutral-300  justify-center my-4   bg-white"
+            className="card-carrousel flex-col  w-11/12 sm:px-5 lg:px-5 rounded-4xl flex shadow-2xl  py-10  h-80 border border-neutral-300  justify-center my-4   bg-white"
             draggable="false"
             key={index} 
           >
@@ -17,7 +17,7 @@ export const CardCarrousel = () => {
               rel="noopener noreferrer "
               className=""
             >
-              <div className=" flex  justify-center mx-8   py-2 px-10 lg:px-20 rounded-full items-center ">
+              <div className=" flex  justify-center mx-8   px-10 lg:px-20 rounded-full items-center ">
                 <img src={receta.imgSrc} alt={receta.name} className=" w-full h-full" />
               </div>
             </a>
@@ -26,9 +26,9 @@ export const CardCarrousel = () => {
                 {receta.name}
               </h2>
 
-              <div className=" flex text-yellow-400 my-2 mx-1 space-x-2">
+              <div className=" flex text-yellow-400  mx-1 space-x-2">
                 {StarIcons.map((star, index) => (
-                  <div className=" " key={index}>{star}</div>
+                  <div className=" my-4" key={index}>{star}</div>
                 ))}
               </div>
             </div>
