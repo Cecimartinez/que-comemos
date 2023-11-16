@@ -6,7 +6,7 @@ import { Greeting } from "./components/Greeting/Greeting";
 
 export const Home = () => {
   return (
-    <div className="bg-white font-poppins flex flex-col justify-between items-baseline h-screen  2xl:h-full  w-full md:h-full">
+    <div className="bg-white font-poppins flex flex-col justify-between items-baseline  h-screen">
       <Greeting userName="Valentina" />
 
       <div className="w-full  flex justify-center items-center lg:mb-4 mb-10">
@@ -22,7 +22,7 @@ export const Home = () => {
           <CardCarrousel />
         </div>
 
-        <div className="flex justify-center items-center   w-full bg-white">
+        <div className="flex justify-center items-center w-full bg-white">
         <ProductCard/>
         </div>
 
