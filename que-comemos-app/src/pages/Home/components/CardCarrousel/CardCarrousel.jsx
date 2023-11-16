@@ -7,7 +7,7 @@ export const CardCarrousel = () => {
       {
         recetas.map((receta,index) => (
           <div
-            className="card-carrousel flex-col  w-11/12 sm:px-5 lg:px-5 rounded-4xl flex shadow-2xl  py-10  h-80 border border-neutral-300  justify-center my-4   bg-white"
+            className="card-carrousel flex-col  w-11/12 sm:px-5 lg:px-5 rounded-4xl flex shadow-xl  py-10  h-80 border border-neutral-200  justify-center my-4   bg-white"
             draggable="false"
             key={index} 
           >
@@ -21,10 +21,10 @@ export const CardCarrousel = () => {
                 <img src={receta.imgSrc} alt={receta.name} className=" w-full h-full" />
               </div>
             </a>
-            <div className=" rounded-xl  flex justify-center items-start px-7  flex-col h-14 text-gray-900">
-              <h2 className="text-lg lg:text-xl tracking-wider text-neutral-500 mt-1 text-center font-medium font-poppins">
+            <div className=" rounded-xl  flex justify-center items-start px-7  flex-col  text-gray-900">
+              <h3 className="text-lg lg:text-xl tracking-wider text-neutral-500 mt-2 text-center font-medium font-poppins">
                 {receta.name}
-              </h2>
+              </h3>
 
               <div className=" flex text-yellow-400  mx-1 space-x-2">
                 {StarIcons.map((star, index) => (

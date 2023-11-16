@@ -22,7 +22,7 @@ export const Home = () => {
           <CardCarrousel />
         </div>
 
-        <div className="flex justify-center items-center px-5  w-full bg-white">
+        <div className="flex justify-center items-center   w-full bg-white">
         <ProductCard/>
         </div>
 

@@ -79,7 +79,7 @@ export const LoginForm = () => {
           </div>
         </div>
       </div>
-      <button type="submit">Iniciar sesion</button>
+      {/* <button type="submit">Iniciar sesion</button> */}
       <Link to="/" type="submit" className="bg-[#B4C170] shadow-xl uppercase text-white py-5 flex justify-between text-lg  px-10 rounded-full my-8 hover:bg-[#9ca85f] w-full">Iniciar Sesión <span className="text-lg material-symbols-outlined">
         arrow_right_alt
       </span>
