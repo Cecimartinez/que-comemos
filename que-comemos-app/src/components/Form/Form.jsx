@@ -12,6 +12,7 @@ import {
   FormLabel,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { useState } from "react"
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -20,6 +21,7 @@ const formSchema = z.object({
 })
 
 export function ProfileForm() {
+
   // 1. Define your form.
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -32,10 +34,10 @@ export function ProfileForm() {
   })
 
   // 2. Define a submit handler.
-  function onSubmit(values) {
+  function onSubmit(data) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values)
+    console.log(form.formState)
   }
 
   return (
@@ -48,7 +50,7 @@ export function ProfileForm() {
             <FormItem>
               <FormLabel className="text-base text-neutral-500" >Email</FormLabel>
               <FormControl>
-                <Input className="rounded-3xl px-5 text-neutral-400" placeholder="email" type="Email" {...field} />
+                <Input className="rounded-3xl px-5 text-neutral-400" placeholder="email" type="Email" {...field}/>
               </FormControl>
             </FormItem>
           )}
@@ -68,7 +70,7 @@ export function ProfileForm() {
 
         <FormField
           control={form.control}
-          name="LastName"
+          name="lastname"
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-base text-neutral-500">Apellido</FormLabel>
@@ -91,7 +93,13 @@ export function ProfileForm() {
             </FormItem>
           )}
         />
-        <Button className=" text-[#B4c170] uppercase  border-2 rounded-3xl border-[#B4c170] mx-16 text-lg tracking-wider  py-7 px-10 font-poppins focus:bg-[#B4c170] transition-colors focus:text-neutral-50 font-medium" type="submit"> Submit</Button>
+        <Button
+          className=" text-[#B4c170] uppercase  border-2 rounded-3xl border-[#B4c170] mx-16 text-lg tracking-wider  py-7 px-10 font-poppins focus:bg-[#B4c170] transition-colors focus:text-neutral-50 font-medium"
+          type="submit"
+          onClick={onSubmit}
+        >
+          Submit
+        </Button>
       </form>
     </Form>
   )

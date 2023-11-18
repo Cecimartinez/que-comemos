@@ -1,13 +1,25 @@
+import { useContext, useEffect } from "react";
 import { NavigationBottom } from "../../components/NavigationBottom/NavigationBottom";
 import { ProductCard } from "../../components/ProductCard/ProductCard";
 import { SearchBar } from "../../components/SearchBard/SearchBard";
 import { CardCarrousel } from "./components/CardCarrousel/CardCarrousel";
 import { Greeting } from "./components/Greeting/Greeting";
+import UsuarioContext from "../../context/usuarios/usuarioContext";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
+
+  const { id, name } = useContext(UsuarioContext)
+
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    if(!id) navigate('/login')
+  }, [])
+
   return (
     <div className="bg-white font-poppins flex flex-col justify-between items-baseline  h-screen">
-      <Greeting userName="Valentina" />
+      <Greeting userName={name} />
 
       <div className="w-full  flex justify-center items-center lg:mb-4 mb-10">
         <SearchBar className={"absolute top-40 lg:top-52 "} />

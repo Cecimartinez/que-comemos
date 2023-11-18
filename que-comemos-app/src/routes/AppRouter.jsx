@@ -9,23 +9,20 @@ import { Steps } from "../pages/Steps/Steps";
 import { Home } from "../pages/Home/Home";
 import { RecipeSearch } from "../pages/RecipeSearch/RecipeSearch";
 
-export const AppRouter = () => {
-  return (
-    <>
-      <Routes>
+export const AppRouter = () => (
+  <Routes>
 
-        <Route path={ROUTE_PATHS.LOGIN} element={<Login />} />
-        <Route path={ROUTE_PATHS.SIGNIN} element={<SignIn/>} />
-        <Route path={ROUTE_PATHS.USERPROFILE} element={<UserProfile/>} />
-        <Route path={ROUTE_PATHS.SAVEDRECIPES} element={<SavedRecipes/>} />
-        <Route path={ROUTE_PATHS.INGREDIENTS} element={<Ingredients/>} />
-        <Route path={ROUTE_PATHS.STEPS} element={<Steps/>} />
-        <Route path={ROUTE_PATHS.RECIPESSEACRH} element={<RecipeSearch/>} />
+    <Route path={ROUTE_PATHS.LOGIN} element={<Login />} />
+    <Route path={ROUTE_PATHS.SIGNIN} element={<SignIn />} />
+    <Route path={ROUTE_PATHS.USERPROFILE} element={<UserProfile />} />
+    <Route path={ROUTE_PATHS.SAVEDRECIPES} element={<SavedRecipes />} />
+    <Route path={ROUTE_PATHS.INGREDIENTS} element={<Ingredients />} />
+    <Route path='/ingredientes/:id' element={<Ingredients />} />
+    <Route path={ROUTE_PATHS.STEPS} element={<Steps />} />
+    <Route path={ROUTE_PATHS.RECIPESSEACRH} element={<RecipeSearch />} />
 
-        <Route index element={<Home/>} />
+    <Route index element={<Home />} />
 
-        <Route path="/*" element={<Navigate to={""} />} />
-      </Routes>
-    </>
-  );
-};
+    <Route path="/*" element={<Navigate to={""} />} />
+  </Routes>
+)

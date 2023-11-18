@@ -1,42 +1,54 @@
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import login from '../login.api';
+import { Button } from '@mui/material';
+import UsuarioContext from '../../../context/usuarios/usuarioContext';
+
+import usePostLogin from '../../../services/auth/usePostLogin'
 
 export const LoginForm = () => {
+
+  const { iniciarSesion } = useContext(UsuarioContext)
+
+  const { isLoading, isError, data, callApi } = usePostLogin()
+
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-      };
-    
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-      };
-    
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        let response = await login(email,password);
-        console.log("ff")
-        console.log(response);
-        if (response.estado){
-          sessionStorage.setItem("access-token",response.token);
-          navigate("/");
-        }else{
-          alert("Contrasena incorrecta")
-        }
-      };
+  useEffect(()=>{
+    if(isError){
+      console.log(data)
+    }
+    if(!isLoading && data?.success && data?.data?.estado){
+      const { id, token, name, lastname } = data.data
+      iniciarSesion(id, email, token, name, lastname)
+      navigate('/')
+    }
+  }, [isError, data, isLoading])
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    callApi({email, password})
+  };
 
   return (
-    <form className=' flex-col ' onSubmit={handleSubmit}>
+    <form className=' flex-col ' onSubmit={handleLogin}>
       <div className="mb-6 " >
         <label htmlFor="email" className="block text-neutral-700 font-medium text-xl">Usuario</label>
         <div className="relative">
           <input
-          value={email}
+            value={email}
             type="email"
             id="email"
             name="email"
@@ -80,10 +92,17 @@ export const LoginForm = () => {
         </div>
       </div>
       {/* <button type="submit">Iniciar sesion</button> */}
-      <Link to="/" type="submit" className="bg-[#B4C170] shadow-xl uppercase text-white py-5 flex justify-between text-lg  px-10 rounded-full my-8 hover:bg-[#9ca85f] w-full">Iniciar Sesión <span className="text-lg material-symbols-outlined">
+      <button
+        type="submit"
+        className="bg-[#B4C170] shadow-xl uppercase text-white py-5  text-center text-lg  px-10 rounded-full my-8 hover:bg-[#9ca85f] w-full"
+        onClick={handleLogin}
+      >
+        Iniciar sesión
+      </button>
+      {/* <Link to="/" type="submit" className="bg-[#B4C170] shadow-xl uppercase text-white py-5 flex justify-between text-lg  px-10 rounded-full my-8 hover:bg-[#9ca85f] w-full">Iniciar Sesión <span className="text-lg material-symbols-outlined">
         arrow_right_alt
       </span>
-      </Link>
+      </Link> */}
       <div className='flex w-full justify-center'>
         <Link to="/sign-in" className='cursor-pointer text-[#B4C170] text-center h-full  text-lg font-medium'>Crear Cuenta </Link>
 

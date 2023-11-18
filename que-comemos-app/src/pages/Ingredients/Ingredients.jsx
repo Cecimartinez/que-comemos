@@ -1,23 +1,37 @@
+import React, { useEffect, useState } from "react"
+
 import { NavigationBottom } from "../../components/NavigationBottom/NavigationBottom"
+
 import { IngredientsItems } from "./components/IngredientsItems"
-import { useEffect, useState } from "react"
-import getReceta from "./ingredientes.api"
+
+import { useParams } from "react-router-dom"
+
+import useGetById from '../../services/recetas/useGetById'
 
 export const Ingredients = () => {
+
+  const { id } = useParams()
+
+  const { isLoading, isError, data, callApi } = useGetById(id)
+
   //const [receta, setReceta] = useState()
   const [receta, setReceta] = useState({ nombre: "", ingredientes: [] });
 
   useEffect(() => {
-    getReceta(10, (recetaData) => {
-      setReceta(recetaData[0]);
-    });
-  }, []);
+    if(isError){
+
+    }
+    if(!isLoading && data?.success){
+      console.log({data})
+      setReceta(data.data[0])
+    }
+  }, [data, isError, isLoading]);
 
   return (
     <div className="bg-white h-screen flex flex-col justify-center items-baseline ">
       <div className="flex flex-col justify-between h-screen w-full ">
         <div className="flex w-full ">
-          <img className=" w-full" src={`http://localhost:8080/api/images/${receta.id}`} />
+          <img className=" w-full" src={`https://quecomemos-servidor-production.up.railway.app/api/images/${receta.id}`} />
         </div>
         <div className="absolute top-1/2 bg-white border h-1/2 shadow-lg border-neutral-300 rounded-t-5xl w-full">
 
@@ -58,7 +72,7 @@ export const Ingredients = () => {
             {receta.ingredientes.map((ingrediente, index) => (
                 <IngredientsItems
                   key={index}
-                  img={`http://localhost:8080/api/images/${ingrediente.id}`}
+                  img={`https://quecomemos-servidor-production.up.railway.app/api/images/${ingrediente.id}`}
                   ingredient={ingrediente.nombre}
                   cant="" 
                 />

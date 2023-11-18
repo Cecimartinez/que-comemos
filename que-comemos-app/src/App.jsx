@@ -1,10 +1,16 @@
+import React from 'react'
+
+import UsuarioState from './context/usuarios/usuariosState'
+
 import { AppRouter } from "./routes/AppRouter"
 
 function App() {
   return (
-    <>
-      <AppRouter />
-    </>
+    <div>
+      <UsuarioState>
+        <AppRouter />
+      </UsuarioState>
+    </div>
   )
 }
 

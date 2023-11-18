@@ -1,29 +1,44 @@
+import React from 'react'
+
 import { recetas } from "../../../../data/data"
 import { StarIcons } from "../StarIcons/StarIcons"
 
+import useGetAleatorio from '../../../../services/recetas/useGetAleatorio'
+
+import { useNavigate } from 'react-router-dom'
+
 export const CardCarrousel = () => {
+
+  const { isLoading, isError, data } = useGetAleatorio()
+
+  const navigate = useNavigate()
+  
+  const onClick = (id) => {
+    navigate(`/ingredientes/${id}`)
+  }
+
+  if (isLoading || !data?.data) {
+    return (
+      <p>Cargando</p>
+    )
+  }
+
   return (
-    <div className="carrousel-container w-full md:px-20 h-full  bg-white  grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
+    <div className="carrousel-container w-full ml-2 md:px-20 h-full  bg-white  grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
       {
-        recetas.map((receta,index) => (
+        data?.data?.map((receta, index) => (
           <div
             className="card-carrousel flex-col  w-11/12 sm:px-5 lg:px-5 rounded-4xl flex shadow-xl  py-5 h-80 lg:h-80 border border-neutral-200  justify-center my-4   bg-white"
             draggable="false"
-            key={index} 
+            key={index}
+            onClick={() => onClick(receta.id)}
           >
-            <a
-              href={receta.link}
-              target="_blank"
-              rel="noopener noreferrer "
-              className=""
-            >
-              <div className=" flex  justify-center mx-8   px-9 lg:px-12 rounded-full items-center ">
-                <img src={receta.imgSrc} alt={receta.name} className=" w-36 h-36" />
-              </div>
-            </a>
+            <div className=" flex  justify-center mx-8   px-9 lg:px-12 rounded-full items-center ">
+              <img src={`https://quecomemos-servidor-production.up.railway.app/api/images/${receta.id}`} alt={receta.id} className=" w-36 h-36" />
+            </div>
             <div className=" rounded-xl  flex justify-center items-start px-7  flex-col  text-gray-900">
               <h3 className="text-lg lg:text-xl tracking-wider text-neutral-500 mt-2 text-center font-medium font-poppins">
-                {receta.name}
+                {receta.nombre}
               </h3>
 
               <div className=" flex text-yellow-400  mx-1 space-x-2 ">

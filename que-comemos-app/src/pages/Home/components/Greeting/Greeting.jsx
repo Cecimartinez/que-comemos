@@ -19,8 +19,8 @@ export const Greeting = ({userName}) => {
         <h1 className='tracking-wide text-white text-2xl lg:text-4xl  font-medium'>
           ¿Qué comemos hoy
         </h1>
-        <h2 className='text-white  text-3xl font-medium tracking-wide'>
-        {userName}
+        <h2 className='text-white  text-4xl font-medium tracking-wide'>
+        {userName}?
         </h2>
       </div>
     </header>
