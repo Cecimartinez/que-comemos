@@ -12,17 +12,17 @@ export const Ingredients = () => {
 
   const { id } = useParams()
 
-  const { isLoading, isError, data, callApi } = useGetById(id)
+  const { isLoading, isError, data } = useGetById(id)
 
   //const [receta, setReceta] = useState()
-  const [receta, setReceta] = useState({ nombre: "", ingredientes: [] });
+  const [receta, setReceta] = useState({ nombre: '', ingredientes: [], receta:'' });
 
   useEffect(() => {
-    if(isError){
+    if (isError) {
 
     }
-    if(!isLoading && data?.success){
-      console.log({data})
+    if (!isLoading && data?.success) {
+      console.log({ data })
       setReceta(data.data[0])
     }
   }, [data, isError, isLoading]);
@@ -33,10 +33,10 @@ export const Ingredients = () => {
         <div className="flex w-full ">
           <img className=" w-full" src={`https://quecomemos-servidor-production.up.railway.app/api/images/${receta.id}`} />
         </div>
-        <div className="absolute top-1/2 bg-white border h-1/2 shadow-lg border-neutral-300 rounded-t-5xl w-full">
+        <div className="absolute top-40 sm:top-1/4 md:top-1/3 bg-white border shadow-lg border-neutral-300 rounded-t-5xl w-full h-full">
 
           <section className="flex flex-col justify-center items-center py-5 gap-3">
-            <p className="text-lg text-neutral-700 font-poppins my-3 font-medium">
+            <p className="text-neutral-700 font-poppins my-3 font-medium text-4xl">
               {receta.nombre}
             </p>
             <div className="flex justify-center gap-7 ">
@@ -60,29 +60,31 @@ export const Ingredients = () => {
 
               </div>
             </div>
-            <div className="flex justify-center items-center mt-3">
+            {/* <div className="flex justify-center items-center mt-3">
               <button className="mx-3 bg-[#B4c170] text-white  py-2 w-32 rounded-2xl text-center text-lg font-medium shadow-xl border border-neutral-300 hover:bg-[#8f9b54] ">Ingredientes</button>
               <button className="mx-3 bg-[#B4c170] text-white  py-2  w-32 rounded-2xl text-center text-lg font-medium shadow-xl border border-neutral-300 hover:bg-[#8f9b54] ">Pasos</button>
-            </div>
+            </div> */}
           </section>
 
-          <div className=" w-full h-full bg-white  px-8 pt-3   ">
-            <div className=" bg-white  w-full h-full border border-neutral-200 rounded-t-4xl shadow-xl  flex flex-col px-8 py-5 mb-3.5">
-
-            {receta.ingredientes.map((ingrediente, index) => (
-                <IngredientsItems
-                  key={index}
-                  img={`https://quecomemos-servidor-production.up.railway.app/api/images/${ingrediente.id}`}
-                  ingredient={ingrediente.nombre}
-                  cant="" 
-                />
-                ))}
-              {/* <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
-              <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." />
-              <IngredientsItems img="././cookie.webp" ingredient="Azúcar Granulada" cant="100 gr." /> */}
-
+          <div className="flex flex-col justify-center items-center mb-5">
+            <div className="w-80">
+              {
+                receta.ingredientes.map((ingrediente, index) => (
+                  <IngredientsItems
+                    key={index}
+                    img={`https://quecomemos-servidor-production.up.railway.app/api/images/${ingrediente.id}`}
+                    ingredient={ingrediente.nombre}
+                    cant=""
+                  />
+                ))
+              }
             </div>
           </div>
+
+          <div  className="ml-10 mr-10 mb-20">
+            <p className="text-gray-600 text-xl">{receta.receta}</p>
+          </div>
+
         </div>
 
       </div>

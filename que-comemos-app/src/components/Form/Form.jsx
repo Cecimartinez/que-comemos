@@ -1,106 +1,203 @@
-"use client"
+import React, { useEffect, useState } from "react"
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import * as z from "zod"
-import { Button } from "@/components/ui/button"
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { useState } from "react"
+import { Link, useNavigate } from 'react-router-dom';
 
-const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-})
+import usePostSignIn from "../../services/auth/usePostSignIn";
 
 export function ProfileForm() {
 
-  // 1. Define your form.
-  const form = useForm({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: "email",
-      fullname: "fullname",
-      password: "password"
+	const { isError, isLoading, data, callApi } = usePostSignIn();
 
-    },
-  })
+	const [datos, setDatos] = useState({
+		nombre: '',
+		apellido: '',
+		email: '',
+		contra: '',
+	})
 
-  // 2. Define a submit handler.
-  function onSubmit(data) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(form.formState)
-  }
+	const [showPassword, setShowPassword] = useState(false);
 
-  return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className=" text-neutral-800 text-3xl font-medium tracking-widest  font-poppins py-10 px-10 rounded-3xl space-y-8">
-        <FormField
-          control={form.control}
-          name="Email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base text-neutral-500" >Email</FormLabel>
-              <FormControl>
-                <Input className="rounded-3xl px-5 text-neutral-400" placeholder="email" type="Email" {...field}/>
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="FullName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base text-neutral-500">Nombre</FormLabel>
-              <FormControl>
-                <Input className="rounded-3xl px-5 text-neutral-400" type="text" placeholder="Nombre" {...field} />
-              </FormControl>
-            </FormItem>
-          )}
-        />
+	const { nombre, apellido, email, contra } = datos
 
-        <FormField
-          control={form.control}
-          name="lastname"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base text-neutral-500">Apellido</FormLabel>
-              <FormControl>
-                <Input className="rounded-3xl px-5 text-neutral-400" type="text" placeholder="Apellido" {...field} />
-              </FormControl>
-            </FormItem>
-          )}
-        />
+	const navigate = useNavigate()
 
-        <FormField
-          control={form.control}
-          name="Password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base text-neutral-500">Contraseña</FormLabel>
-              <FormControl>
-                <Input className="rounded-3xl px-5 text-neutral-400" type="password" placeholder="Contraseña" {...field} />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <Button
-          className=" text-[#B4c170] uppercase  border-2 rounded-3xl border-[#B4c170] mx-16 text-lg tracking-wider  py-7 px-10 font-poppins focus:bg-[#B4c170] transition-colors focus:text-neutral-50 font-medium"
-          type="submit"
-          onClick={onSubmit}
-        >
-          Submit
-        </Button>
-      </form>
-    </Form>
-  )
+	useEffect(()=>{
+
+		if(isError){
+			navigate('/login')
+		}
+		if(!isLoading && data?.success){
+			navigate('/login')
+		}
+		
+	}, [data, isError, isLoading])
+
+	const handleChangeNombre = (e) => {
+		setDatos({
+			...datos,
+			nombre: e.target.value
+		})
+	}
+
+	const handleChangeApellido = (e) => {
+		setDatos({
+			...datos,
+			apellido: e.target.value
+		})
+	}
+
+	const handleChangeEmail = (e) => {
+		setDatos({
+			...datos,
+			email: e.target.value
+		})
+	}
+
+	const handleChangeContra = (e) => {
+		setDatos({
+			...datos,
+			contra: e.target.value
+		})
+	}
+
+	// 2. Define a submit handler.
+	const handleSignIn = (e) => {
+
+		e.preventDefault()
+
+		callApi({
+			name: nombre,
+			lastname: apellido,
+			email: email,
+			password: contra
+		})
+
+	}
+
+	if(isLoading){
+		return(
+			<p>Cargando</p>
+		)
+	}
+
+	return (
+
+		<form className='flex-col w-80 mt-20' onSubmit={handleSignIn}>
+
+			<div className="mb-6 " >
+
+				<label htmlFor="nombre" className="block text-neutral-700 font-medium text-xl">Nombre</label>
+
+				<div className="relative">
+
+					<input
+						value={nombre}
+						type="text"
+						id="nombre"
+						name="nombre"
+						placeholder="Nombre..."
+						className="w-full border-b-2 bg-white b border-neutral-300 focus:border-[#B4C170] focus:outline-none py-2 "
+						onChange={handleChangeNombre}
+					/>
+
+				</div>
+
+			</div>
+
+			<div className="mb-6 " >
+
+				<label htmlFor="apellido" className="block text-neutral-700 font-medium text-xl">Apellido</label>
+
+				<div className="relative">
+
+					<input
+						value={apellido}
+						type="text"
+						id="apellido"
+						name="apellido"
+						placeholder="Apellido..."
+						className="w-full border-b-2 bg-white b border-neutral-300 focus:border-[#B4C170] focus:outline-none py-2 "
+						onChange={handleChangeApellido}
+					/>
+
+				</div>
+
+			</div>
+
+			<div className="mb-6" >
+
+				<label htmlFor="email" className="block text-neutral-700 font-medium text-xl">Email</label>
+
+				<div className="relative">
+
+					<input
+						value={email}
+						type="email"
+						id="email"
+						name="email"
+						placeholder="Email..."
+						className="w-full border-b-2 bg-white b border-neutral-300 focus:border-[#B4C170] focus:outline-none py-2 "
+						onChange={handleChangeEmail}
+					/>
+
+				</div>
+
+			</div>
+
+
+			<div className="mb-6">
+
+				<label htmlFor="password" className="block text-xl font-medium  text-neutral-700">Contraseña</label>
+
+				<div className="relative">
+
+					<input
+						type={showPassword ? 'text' : 'password'}
+						value={contra}
+						id="password"
+						name="password"
+						placeholder="Contraseña"
+						className="w-full border-b-2 bg-white border-neutral-300 focus:border-[#B4C170] focus:outline-none py-2 "
+						onChange={handleChangeContra}
+					/>
+
+					<div
+						className="absolute right-3 top-2 text-[#B4C170] cursor-pointer"
+						onClick={() => setShowPassword(!showPassword)}
+					>
+
+						{
+							!showPassword ? (
+								<span className="material-symbols-outlined">
+									visibility_off
+								</span>
+							) : (
+								<span className="material-symbols-outlined">
+									visibility
+								</span>
+							)
+						}
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<button
+				type="submit"
+				className="bg-[#B4C170] shadow-xl uppercase text-white py-5  text-center text-lg  px-10 rounded-full my-8 hover:bg-[#9ca85f] w-full"
+				onClick={handleSignIn}
+			>
+				Crear cuenta
+			</button>
+
+			<div className='flex w-full justify-center'>
+
+				<Link to="/login" className='cursor-pointer text-[#B4C170] text-center h-full  text-lg font-medium'>Ya tengo una cuenta</Link>
+
+			</div>
+
+		</form>
+	)
 }
