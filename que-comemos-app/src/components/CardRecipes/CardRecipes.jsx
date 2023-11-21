@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 import useGetById from '../../services/recetas/useGetById'
 
-export const CardRecipes = ({ recetaId }) => {
+export const CardRecipes = ({ recetaId, isSaved }) => {
 
   const { data } = useGetById(recetaId)
 
-  if(!data){
-    return(
+  if (!data) {
+    return (
       <div>
         Cargando
       </div>
@@ -40,12 +40,15 @@ export const CardRecipes = ({ recetaId }) => {
               </span>
               <p className="py-2 px-1"></p> {puntuacion}
             </div>
-            <div className="flex justify-center items-center ">
-              <span className="mr-2 material-symbols-outlined text-yellow-500"> bookmark
-              </span>
+            {
+              isSaved && (
+                <div className="flex justify-center items-center ">
+                  <span className={`mr-2 material-symbols-outlined text-yellow-500`}> bookmark
+                  </span>
 
-            </div>
-
+                </div>
+              )
+            }
           </div>
         </div>
       </div>
