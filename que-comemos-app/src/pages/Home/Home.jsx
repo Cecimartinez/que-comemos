@@ -7,23 +7,36 @@ import { Greeting } from "./components/Greeting/Greeting";
 import UsuarioContext from "../../context/usuarios/usuarioContext";
 import { useNavigate } from "react-router-dom";
 
+import useGetRecetasGuardadas from '../../services/user/useGetRecetasGuardadas'
+
 export const Home = () => {
 
-  const { id, name } = useContext(UsuarioContext)
+  const { id, name, setRecetasGuardadas } = useContext(UsuarioContext)
+
+  const { isLoading, isError, data } = useGetRecetasGuardadas(id)
 
   const navigate = useNavigate()
 
-  useEffect(()=>{
-    if(!id) navigate('/login')
+  useEffect(() => {
+    if (!id) {
+      navigate('/login')
+    } 
   }, [])
+
+  useEffect(() => {
+    if (!isError && !isLoading && data?.success) {
+      console.log(data.data.recetas)
+      setRecetasGuardadas([...new Set(data.data.recetas)])
+    } 
+  }, [isLoading, isError, data])
 
   return (
     <div className="bg-white font-poppins flex flex-col justify-between items-baseline  h-screen">
       <Greeting userName={name} />
 
-      <div className="w-full  flex justify-center items-center lg:mb-4 mb-10">
+      {/* <div className="w-full  flex justify-center items-center lg:mb-4 mb-10">
         <SearchBar className={"absolute top-40 lg:top-52 "} />
-      </div>
+      </div> */}
 
       <div className="bg-white flex flex-col my-10 sm:py-5 lg:py-10 h-screen  w-full">
         <section>
@@ -35,10 +48,10 @@ export const Home = () => {
         </div>
 
         <div className="flex justify-center items-center w-full bg-white">
-        <ProductCard/>
+          <ProductCard />
         </div>
 
-      
+
 
       </div>
 

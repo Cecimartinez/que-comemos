@@ -7,4 +7,6 @@ export const SET_JWT = 'SET_JWT';
 export const LOG_OUT = 'LOG_OUT';
 
 export const SET_FULL_NAME = 'SET_FULL_NAME';
+export const ADD_RECETA_GUARDADA = 'ADD_RECETA_GUARDADA';
+export const SET_RECETAS_GUARDADAS = 'SET_RECETAS_GUARDADAS';
 

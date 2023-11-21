@@ -11,6 +11,8 @@ export const RecipeSearch = () => {
         <SearchBar className="absolute"  />
       </div>
 
+      
+
       <NavigationBottom />
     </div>
   )

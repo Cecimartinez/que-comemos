@@ -5,7 +5,9 @@ import {
     LOG_OUT,
     SET_JWT,
     SET_ID,
-    SET_FULL_NAME
+    SET_FULL_NAME,
+    SET_RECETAS_GUARDADAS,
+    ADD_RECETA_GUARDADA,
 } from '../../types/index';
 
 const UsuarioReducer = (state, action) => {
@@ -45,6 +47,18 @@ const UsuarioReducer = (state, action) => {
                 ...state,
                 name: action.payload.name,
                 lastname: action.payload.lastname,
+            }
+
+        case SET_RECETAS_GUARDADAS:
+            return {
+                ...state,
+                recetasGuardadas: action.payload,
+            }
+
+        case ADD_RECETA_GUARDADA:
+            return {
+                ...state,
+                recetasGuardadas: [...state.recetasGuardadas, action.payload],
             }
 
         case LOG_OUT:

@@ -9,6 +9,8 @@ import {
     SET_JWT,
     SET_ID,
     SET_FULL_NAME,
+    ADD_RECETA_GUARDADA,
+    SET_RECETAS_GUARDADAS,
 } from '../../types/index';
 
 const UsuarioState = props => {
@@ -21,6 +23,7 @@ const UsuarioState = props => {
         cargando: false,
         name: '',
         lastname: '',
+        recetasGuardadas: []
     }
 
     const [state, dispatch] = useReducer(UsuarioReducer, initialState)
@@ -60,6 +63,20 @@ const UsuarioState = props => {
         })
     }
 
+    const setRecetasGuardadas = (lista) => {
+        dispatch({
+            type: SET_RECETAS_GUARDADAS,
+            payload: lista
+        })
+    }
+
+    const addRecetaGuardada = (id) => {
+        dispatch({
+            type: ADD_RECETA_GUARDADA,
+            payload: id
+        })
+    }
+
     const cerrarSesion = async () => {
 
         dispatch({
@@ -77,11 +94,14 @@ const UsuarioState = props => {
                 name: state.name,
                 lastname: state.lastname,
                 cargando: state.cargando,
+                recetasGuardadas: state.recetasGuardadas,
                 iniciarSesion,
                 cerrarSesion,
                 setEmail,
                 setFullName,
-                cerrarSesion
+                cerrarSesion,
+                addRecetaGuardada,
+                setRecetasGuardadas,
             }}
         >
             {props.children}
