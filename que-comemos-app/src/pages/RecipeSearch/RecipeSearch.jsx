@@ -1,6 +1,5 @@
 import { Header } from "../../components/Header/Header"
 import { NavigationBottom } from "../../components/NavigationBottom/NavigationBottom"
-import { SearchBar } from "../../components/SearchBard/SearchBard"
 import { CardRecipes } from "../../components/CardRecipes/CardRecipes"
 import useGetAllRecetas from '../../services/recetas/useGetAllRecetas'
 import { useEffect, useState } from "react"
@@ -8,7 +7,6 @@ import { useEffect, useState } from "react"
 export const RecipeSearch = () => {
 
   const { isLoading, isError, data } = useGetAllRecetas()
-
   const [original, setOriginal] = useState([])
   const [lista, setLista] = useState([])
   const [busqueda, setBusqueda] = useState('')
@@ -21,14 +19,13 @@ export const RecipeSearch = () => {
   }, [isLoading, isError, data])
 
   useEffect(() => {
-    if(busqueda?.trim()===''){
+    if (busqueda?.trim() === '') {
       setLista(original)
-    }else{
-      setLista(buscarRecetas(busqueda)) 
+    } else {
+      setLista(buscarRecetas(busqueda))
     }
   }, [busqueda])
 
-  // Función de búsqueda
   function buscarRecetas(textoBusqueda) {
     // Filtra las recetas que coinciden con el texto de búsqueda
     const resultados = original.filter((receta) => {
@@ -53,25 +50,22 @@ export const RecipeSearch = () => {
       <Header page="Buscar recetas" />
 
       <div className="w-full flex flex-row justify-center mt-4">
-        {/* <SearchBar /> */}
         <div >
           <input
             type="search"
             className="input text-lg lg:text-xl text-neutral-500 transition-all border-neutral-400 duration-500 ease-in-out bg-white shadow-xl border py-10  lg:py-12   items-center px-16 font-medium justify-center rounded-5xl focus:border-2 focus:border-[#abb867] focus:bg-white"
             placeholder="Qué comemos hoy?"
             value={busqueda}
-            onChange={(e)=> setBusqueda(e.target.value)}
+            onChange={(e) => setBusqueda(e.target.value)}
           />
-          {/* <button className="text-neutral-500 absolute right-4 top-1/2 transform -translate-y-2/4 px-3 ">
-        <span className="material-symbols-outlined lg:text-3xl">search</span>
-      </button> */}
+
         </div>
       </div>
 
       {
         isLoading ? (
           <div className="w-full flex flex-row justify-center mt-10">
-            <p className="text-center">Cargando...</p>
+            <span className="loading loading-ring loading-md"></span>
           </div>
         ) : (
           <div className="w-full flex flex-row justify-center mt-10">
