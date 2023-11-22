@@ -1,8 +1,6 @@
 
 import { StarIcons } from "../StarIcons/StarIcons"
-
 import useGetAleatorio from '../../../../services/recetas/useGetAleatorio'
-
 import { useNavigate } from 'react-router-dom'
 
 export const CardCarrousel = () => {
@@ -10,14 +8,14 @@ export const CardCarrousel = () => {
   const { isLoading, data } = useGetAleatorio()
 
   const navigate = useNavigate()
-  
+
   const onClick = (id) => {
     navigate(`/ingredientes/${id}`)
   }
 
   if (isLoading || !data?.data) {
     return (
-      <p>Cargando</p>
+      <span className="loading loading-ring loading-md"></span>
     )
   }
 
