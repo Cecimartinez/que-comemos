@@ -1,11 +1,7 @@
-import React, { useEffect, useState, useContext } from "react"
-
+import { useEffect, useState, useContext } from "react"
 import { NavigationBottom } from "../../components/NavigationBottom/NavigationBottom"
-
 import { IngredientsItems } from "./components/IngredientsItems"
-
 import { useParams } from "react-router-dom"
-
 import useGetById from '../../services/recetas/useGetById'
 import usePostGuardarReceta from '../../services/user/usePostGuardarReceta'
 import UsuarioContext from "../../context/usuarios/usuarioContext"
@@ -30,7 +26,7 @@ export const Ingredients = () => {
 
   useEffect(() => {
     if (isError) {
-
+      return "Error al Cargar Receta";
     }
     if (!isLoading && data?.success) {
       console.log({ data })
@@ -63,14 +59,14 @@ export const Ingredients = () => {
         <div className="absolute top-40 sm:top-1/4 md:top-1/3 bg-white border shadow-lg border-neutral-300 rounded-t-5xl w-full">
 
           <section className="flex flex-col justify-center items-center py-5 gap-3">
-            <p className="text-neutral-700 font-poppins my-3 font-medium text-4xl">
+            <p className="text-neutral-800  text-center font-poppins my-3 font-medium text-2xl mx-5">
               {receta.nombre}
             </p>
             <div className="flex justify-center gap-7 ">
               <div className="flex justify-center items-center  ">
                 <span className="mr-2 material-symbols-outlined "> timer
                 </span>
-                <p className="">{receta.tiempoPreparacion}'</p>
+                <p className="">{receta.tiempoPreparacion}</p>
                 <i className="ml-7">|</i>
               </div>
 
@@ -85,25 +81,21 @@ export const Ingredients = () => {
                 className="flex justify-center items-center cursor-pointer"
                 onClick={saveReceta}
               >
-                <span className={`mr-2 material-symbols-outlined ${saved ? 'text-yellow-500' : ''}`}>bookmark</span>
+                <span className={`mr-2 material-symbols-outlined ${saved ? 'text-[#B4C170]' : ''}`}>bookmark</span>
               </div>
             </div>
-            {/* <div className="flex justify-center items-center mt-3">
-              <button className="mx-3 bg-[#B4c170] text-white  py-2 w-32 rounded-2xl text-center text-lg font-medium shadow-xl border border-neutral-300 hover:bg-[#8f9b54] ">Ingredientes</button>
-              <button className="mx-3 bg-[#B4c170] text-white  py-2  w-32 rounded-2xl text-center text-lg font-medium shadow-xl border border-neutral-300 hover:bg-[#8f9b54] ">Pasos</button>
-            </div> */}
+
           </section>
 
           <div className="flex flex-col justify-center items-center mb-5">
             <div className="w-80">
-              <p className="text-neutral-700 font-poppins my-3 font-medium text-2xl text-center">
-                Ingredientes:
+              <p className="text-[#9fac62] font-poppins my-3 font-medium text-2xl text-center">
+                Ingredientes
               </p>
               {
                 receta.ingredientes.map((ingrediente, index) => (
                   <IngredientsItems
                     key={index}
-                    // img={`https://quecomemos-servidor-production.up.railway.app/api/images/${ingrediente.id}`}
                     ingredient={ingrediente.nombre}
                     cant=""
                   />
@@ -113,14 +105,12 @@ export const Ingredients = () => {
           </div>
 
           <div className="ml-10 mr-10 mb-20">
-            <p className="text-neutral-700 font-poppins my-3 font-medium text-2xl text-center">
-              Pasos:
+            <p className="text-[#9fac62] font-poppins my-3 font-medium text-2xl text-center">
+              Pasos
             </p>
             <p className="text-gray-600 text-xl">{receta.receta}</p>
           </div>
-
         </div>
-
       </div>
 
       <NavigationBottom />
