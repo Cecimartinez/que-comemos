@@ -1,6 +1,4 @@
-import React from 'react'
 
-import { recetas } from "../../../../data/data"
 import { StarIcons } from "../StarIcons/StarIcons"
 
 import useGetAleatorio from '../../../../services/recetas/useGetAleatorio'
@@ -9,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 export const CardCarrousel = () => {
 
-  const { isLoading, isError, data } = useGetAleatorio()
+  const { isLoading, data } = useGetAleatorio()
 
   const navigate = useNavigate()
   
@@ -28,16 +26,16 @@ export const CardCarrousel = () => {
       {
         data?.data?.map((receta, index) => (
           <div
-            className="card-carrousel flex-col  w-11/12 sm:px-5 lg:px-5 rounded-4xl flex shadow-xl  py-5 h-80 lg:h-80 border border-neutral-200  justify-center my-4   bg-white"
+            className="card-carrousel flex-col  w-11/12 sm:px-5 lg:px-5 rounded-4xl flex shadow-xl  py-5 h-80 lg:h-80 border border-neutral-100  justify-center my-4   bg-white"
             draggable="false"
             key={index}
             onClick={() => onClick(receta.id)}
           >
-            <div className=" flex  justify-center mx-8   px-9 lg:px-12 rounded-full items-center ">
-              <img src={`https://quecomemos-servidor-production.up.railway.app/api/images/${receta.id}`} alt={receta.id} className=" w-36 h-36" />
+            <div className=" flex  justify-center h-full px-8 lg:px-10 rounded-full items-center w-full ">
+              <img src={`https://quecomemos-servidor-production.up.railway.app/api/images/${receta.id}`} alt={receta.id} className=" w-full h-full rounded-3xl" />
             </div>
             <div className=" rounded-xl  flex justify-center items-start px-7  flex-col  text-gray-900">
-              <h3 className="text-lg lg:text-xl tracking-wider text-neutral-500 mt-2 text-center font-medium font-poppins">
+              <h3 className="text-lg lg:text-xl tracking-wider text-neutral-500 mt-3 text-center font-medium font-poppins">
                 {receta.nombre}
               </h3>
 
