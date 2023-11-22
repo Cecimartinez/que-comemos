@@ -53,7 +53,7 @@ export const RecipeSearch = () => {
         <div >
           <input
             type="search"
-            className="input text-lg lg:text-xl text-neutral-500 transition-all border-neutral-400 duration-500 ease-in-out bg-white shadow-xl border py-10  lg:py-12   items-center px-16 font-medium justify-center rounded-5xl focus:border-2 focus:border-[#abb867] focus:bg-white"
+            className="input text-lg lg:text-xl text-neutral-500 transition-all border-neutral-400 duration-500 ease-in-out bg-white shadow-xl border py-10  lg:py-12   items-center px-4 font-medium justify-center rounded-5xl focus:border-2 focus:border-[#abb867] focus:bg-white"
             placeholder="Qué comemos hoy?"
             value={busqueda}
             onChange={(e) => setBusqueda(e.target.value)}

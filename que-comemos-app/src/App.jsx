@@ -6,11 +6,9 @@ import { AppRouter } from "./routes/AppRouter"
 
 function App() {
   return (
-    <div>
       <UsuarioState>
         <AppRouter />
       </UsuarioState>
-    </div>
   )
 }
 

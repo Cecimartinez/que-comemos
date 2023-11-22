@@ -20,7 +20,7 @@ export const CardCarrousel = () => {
   }
 
   return (
-    <div className="carrousel-container w-full ml-2 md:px-20 h-full  bg-white  grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
+    <div className="carrousel-container w-full ml-2 md:px-10 h-full  bg-white  grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
       {
         data?.data?.map((receta, index) => (
           <div
@@ -29,8 +29,8 @@ export const CardCarrousel = () => {
             key={index}
             onClick={() => onClick(receta.id)}
           >
-            <div className=" flex  justify-center h-full px-8 lg:px-10 rounded-full items-center w-full ">
-              <img src={`https://quecomemos-servidor-production.up.railway.app/api/images/${receta.id}`} alt={receta.id} className=" w-full h-full rounded-3xl" />
+            <div className=" flex  justify-center h-full px-4 lg:px-6 rounded-full items-center w-full ">
+              <img src={`https://quecomemos-servidor-production.up.railway.app/api/images/${receta.id}`} alt={receta.id} className=" w-56 h-56 object-contain rounded-3xl" />
             </div>
             <div className=" rounded-xl  flex justify-center items-start px-7  flex-col  text-gray-900">
               <h3 className="text-lg lg:text-xl tracking-wider text-neutral-500 mt-3 text-center font-medium font-poppins">

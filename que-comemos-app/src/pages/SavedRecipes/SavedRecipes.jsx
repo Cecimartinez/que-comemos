@@ -9,9 +9,15 @@ export const SavedRecipes = () => {
 
   return (
 
-    <div className="bg-white font-poppins flex flex-col justify-between items-center h-screen h-min:h:screen w-full">
+    <div className="bg-white font-poppins flex flex-col items-center h-screen h-min:h:screen w-full">
       <Header page="Recetas Guardadas" />
-      <div className="pb-20 mt-10 justify-center  items-center h-full grid  md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
+      <div className="mt-10 h-min:screen  grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
+
+        {
+          recetasGuardadas?.length === 0 && (
+            <p>No tenés recetas guardadas</p>
+          )
+        }
 
         {
           recetasGuardadas?.map(recetaId => (

@@ -192,9 +192,9 @@ export function ProfileForm() {
 				Crear cuenta
 			</button>
 
-			<div className='flex w-full justify-center'>
+			<div className='flex w-full justify-center '>
 
-				<Link to="/login" className='cursor-pointer text-[#B4C170] text-center h-full  text-lg font-medium'>Ya tengo una cuenta</Link>
+				<Link to="/login" className='cursor-pointer text-[#B4C170] text-center h-full my-4 text-lg font-medium'>Ya tengo una cuenta</Link>
 
 			</div>
 
